@@ -1,0 +1,21 @@
+<div class="formCadastro">
+    <form [formGroup]="formulario">
+        <div class="titulo">
+            <p>Crie uma conta</p>
+        </div>
+        <div class="subTitulo">
+            <p>Tipo de acesso:</p>
+        </div>
+        <div class="linhaCheckBox">
+            <input id="checkbox" type="radio" [checked]="isAluno" (click)="changeUserType()"/>Aluno
+            <input id="checkbox" type="radio" [checked]="isProfessor" (click)="changeUserType()"/>Professor
+        </div>
+        <input type="text" placeholder="nome" formControlName="nome"/>
+        <input type="text" placeholder="link para página pessoal" formControlName="paginaPessoal" *ngIf="isProfessor"/>
+        <input type="text" placeholder="curso" formControlName="curso" *ngIf="isAluno"/>
+        <input type="email" placeholder="email" formControlName="email"/>
+        <input type="password" placeholder="senha" formControlName="senha"/>
+    </form>
+    <button class="form-control" type="submit" (click)="onSubmit()">Registrar</button>
+</div>
+

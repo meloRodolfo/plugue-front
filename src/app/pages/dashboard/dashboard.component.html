@@ -1,0 +1,57 @@
+<body>
+	<app-header></app-header>
+	<div id="search">
+		<form [formGroup]="formularioBusca">
+			<div class="search-tools">
+				<label for="title">Título</label><br>
+				<input type="text" id="title" name="title" formControlName="titulo"><br>
+			</div>
+			<div class="search-tools">
+				<label for="area">Areas de Interesse</label><br>
+				<input type="text" id="area" name="area" formControlName="area">
+			</div>
+		</form>
+		<button id="btn-search" type="button" (click)="buscaPorParametros()">Buscar</button>
+	</div>
+	<div id="ideas" *ngIf="isProfessor">
+		<ul>
+			<li *ngFor="let i of ideias">
+				<div class="card">
+					<header>
+						<h1 class="card-title">{{ i.titulo }}</h1>
+						<h6> {{ i.areaInteresse }} </h6>
+					</header>
+					<p>
+						{{ i.descricao }}
+					</p>
+					<footer>
+						<img src="./../../../assets/stylesheets/img/avatar3.png">
+						<h4>{{ i.aluno.nome }}</h4>
+						<button id="btn-interest" type="button" (click)="interessaIdeia(i.id)">Candidatar-se</button>
+					</footer>
+				</div>
+			</li>
+		</ul>
+	</div>
+
+	<div id="projetos" *ngIf="isAluno">
+		<ul>
+			<li *ngFor= "let p of projetos">
+				<div class="card">
+					<header>
+						<h1 class="card-title">{{ p.titulo }}</h1>
+						<h6> {{ p.areaInteresse }} </h6>
+					</header>
+					<p>
+						{{ p.descricao }}
+					</p>
+					<footer>
+						<img src="./../../../assets/stylesheets/img/avatar3.png">
+						<h4>{{ p.professor.nome }}</h4>
+						<button id="btn-interest" type="button" (click)="interessaProjeto(p.id)">Candidatar-se</button>
+					</footer>
+				</div>
+			</li>
+		</ul>
+	</div>
+</body>

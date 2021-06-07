@@ -1,0 +1,146 @@
+@import './_colors.scss';
+
+#search {
+    background-color: $main-color;
+    width: 96vw;
+    padding: 2%;
+    display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: center;
+	align-items: center;
+	align-content: center;
+}
+
+form {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: flex-start;
+	align-items: center;
+	align-content: center;
+}
+
+label {
+    font-family: 'Lato', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 22px;
+    color: #FFF5D6;
+}
+
+input {
+    background: #C67777;
+    border: 2px solid #813B3B;
+    box-sizing: border-box;
+    border-radius: 6px;
+    width: 15vw;
+    height: 4.5vh;
+}
+
+.search-tools {
+    margin-right: 5vh;
+}
+
+#btn-search {
+    width: 15vw;
+    height: 4.5vh;
+    background: #FDFDFD;
+    border-style: none;
+    border-radius: 6px;
+    font-family: Lato;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 22px;
+    color: $main-color;
+    position: relative;
+    top: 10px;
+}
+
+.card {
+    width: 50vw;
+    margin: 1vw 5vw;
+    background: #FFFFFF;
+    box-shadow: 0px 5px 30px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    padding: 30px;
+}
+
+.card-title, p, h6 {
+    font-family: Lato;
+    font-style: normal;
+    font-weight: normal;
+}
+
+.card-title {
+    margin: 0;
+    font-size: 24px;
+    color: $dark-color;
+}
+
+h6 {
+    margin: auto 25px;
+    background-color: $main-color;
+    padding: 3px 21px;
+    border-radius: 10px;
+    color: $yellow
+}
+
+p {
+    font-size: 16px;
+    color: $dark-color;
+}
+
+h4 {
+    font-family: Lato;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16px;
+    letter-spacing: 0.01em;
+    color: $gray;
+    margin: 10px 15px;
+}
+
+footer {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap-reverse;
+	justify-content: flex-start;
+}
+
+#btn-interest {
+    margin-left: auto;
+    padding: 10px;
+    background-color: transparentize($main-color, 0.60);
+    color: $main-color;
+    border-style: none;
+    border-radius: 6px;
+    font-family: Lato;
+    font-style: normal;
+    font-weight: bold;
+    right: 0;
+}
+
+#btn-interest:hover {
+    background-color: transparentize($main-color, 0.40);;
+}
+
+ul {
+    list-style-type: none;
+}
+
+#ideas {
+    margin-top: 5vw;
+}
+
+header {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: flex-start;
+	align-items: stretch;
+	align-content: stretch;
+}

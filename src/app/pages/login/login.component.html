@@ -1,0 +1,19 @@
+<html>
+    <div class="login">  
+        <button class="close-button" onclick="location.href='../'">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    
+        <div class="login_label">
+            <h1>Plugue-se</h1>
+        </div>
+    
+        <form class="form_login" [formGroup]="formulario">        
+            <input type="text" class="username" formControlName="email" placeholder="E-mail"/>
+            <input type="password" class="password" formControlName="senha" placeholder="Senha"/>
+            <button type="button" class="button_login" (click)="login()">PLUGAR</button>
+        </form>    
+    </div>
+</html>
+
+

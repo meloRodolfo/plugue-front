@@ -1,0 +1,52 @@
+@import './_colors.scss';
+
+header {
+    background-color: #fff;
+    position: relative;
+    width: 100vw;
+    height: 9vh;
+    top: 0px;
+    left: 0px;
+    border-bottom: 5px solid $main-color;
+}
+
+#logo-background {
+    background-color: $main-color;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    width: 9.5vh;
+    height: 9.5vh;
+    left: 0px;
+    top: 0px;
+}
+
+#logo {
+    display: block;
+    margin: auto;
+    width: 5vh;
+}
+
+#home-menu {
+    position: absolute;
+    left: 7%;
+    color: $main-color;
+    top: 2vh;
+    width: 4vh;
+}
+
+#idea-menu {
+    position: absolute;
+    left: 12%;
+    color: $main-color;
+    top: 2vh;
+    width: 4vh;
+}
+
+#logout {
+    position: absolute;
+    top: 2vh;
+    right: 2.25vh;
+    color: gray;
+    width: 4vh;
+}

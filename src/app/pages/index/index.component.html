@@ -1,0 +1,65 @@
+<div class="apresentacao">
+  <div class="logo">
+    <img src="assets/stylesheets/img/plug1.png" alt="reuniao">
+    <P>PLUGUE</P>
+  </div>
+  
+  <button class="acessar" (click)="clickLogin()">ACESSAR</button>
+
+  <div class="marca">
+    <h1>PLUGUE</h1>
+    <h2>Conectando ideias de professor e alunos</h2>
+    <button class="registrar" (click)="clickSignUp()">REGISTRE-SE</button>
+  </div>
+</div>
+
+<div class="ideia">
+  <div class="descricao">
+    <h2>Conecte-se!</h2>
+    <p>A Plugue te ajuda a encontrar projetos e compartilhar suas melhores ideias entre alunos e professores da Universidade Federal Fluminense, com o intuito de facilitar a busca por orientadores e orientados para projetos de aplicação e iniciações científicas!</p>
+  </div>
+  <div class="imagem">
+    <img src="assets/stylesheets/img/reuniao.png" alt="reuniao">
+  </div>
+
+  <div id="login-render" *ngIf="displayCadastro">
+    <app-cadastro></app-cadastro>
+  </div>
+  <div id="login-render" *ngIf="displayLogin">
+    <app-login></app-login>
+  </div>
+</div>
+
+<div class="como_funciona">
+  <h2>Como funciona?</h2>
+
+  <div id="como_funciona_passos">
+    <div class="plugue">
+      <img src="assets/stylesheets/img/01.png" alt="reuniao">
+      <img class="img_plugue" src="assets/stylesheets/img/plug2.png" alt="reuniao">
+      <h3>Seja parte da Plugue</h3>
+      <p>Crie uma conta na Plugue e faça parte dessa comunidade!</p>
+    </div>
+  
+    <div class="encontre">
+      <img src="assets/stylesheets/img/02.png" alt="reuniao">
+      <img class="img_encontre" src="assets/stylesheets/img/encontrar.png" alt="reuniao">
+      <h3>Encontre ideias</h3>
+      <p>Pesquise ideias de acordo com as suas áreas de interesse</p>
+    </div>
+  
+    <div class="compartilhe">
+      <img src="assets/stylesheets/img/03.png" alt="reuniao">
+      <img class="img_compartilhe" src="assets/stylesheets/img/compartilhar.png" alt="reuniao">
+      <h3>Compartilhe suas ideias</h3>
+      <p>Crie novas ideias na plataforma para encontrar pessoas interessadas em trabalhar com você!</p>
+    </div>
+  
+    <div class="conect">
+      <img src="assets/stylesheets/img/04.png" alt="reuniao">
+      <img class="img_conect" src="assets/stylesheets/img/check.png" alt="reuniao">
+      <h3>Conecte-se</h3>
+      <p>Entre em contatos com donos de ideias e comecem a trabalhar juntos!</p>
+    </div>
+  </div>
+</div>

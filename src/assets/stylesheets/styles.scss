@@ -1,0 +1,13 @@
+/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
+@import './_colors.scss';
+
+body {
+    position: absolute;
+    margin: 0;
+    overflow-x: hidden;
+}
+
+html {
+    background-color: transparentize($main-color, 0.95);
+}

@@ -1,0 +1,160 @@
+div.projeto{
+    width: 60vw;
+    height: 75vh;
+    background: #FFFFFF;
+    box-shadow: 0px 5px 30px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    margin-right: 5vw;
+}
+
+.label_projeto{
+    font-family: Lato;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 46px;
+    line-height: 58px;
+    text-align: center;
+    color: #4F3938;
+    margin: 39px 50px 36px 46px;
+}
+
+#card_header {
+    display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: flex-start;
+	align-items: baseline;
+	align-content: stretch;
+}
+
+button.button_delete{
+    width: 47px;
+    height: 47px;
+    background: rgba(221, 23, 23, 0.1);
+    border-radius: 70px;
+    border: none;
+    outline: none;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.button_delete:hover {
+    background: rgba(221, 23, 23, 0.3);
+}
+
+.button_update{
+    width: 47px;
+    height: 47px;
+    background: rgba(94, 131, 146, 0.1);
+    border-radius: 70px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.button_update:hover {
+    background: rgba(94, 131, 146, 0.3);
+}
+
+p.descricao{
+    margin: auto 50px;
+    font-family: Lato;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 22px;
+    color: #4F3938;
+    text-align: justify;  
+}
+
+div.area_interesse{
+    margin-left: 50px;
+    font-family: Lato;
+    font-style: normal;
+    font-weight: bolder;
+    font-size: 15px;
+    line-height: 22px;
+    color: #4F3938;
+}
+
+#button_1{
+    width: 103px;
+    height: 27px;
+    left: 0px;
+    top: 65px;
+    background: #B35F5F;
+    border-radius: 10px;
+    border: none;
+    color: #faf9f9;
+    outline: none;
+}
+
+.button {
+    margin-right: 10px;
+}
+
+div.professores_interesse{
+    width: 25vw;
+    height: 75vh;
+    background: #FFFFFF;
+    box-shadow: 0px 5px 30px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.label_interesse{
+    font-family: Lato;
+    font-size: 18px;
+    line-height: 24px;
+    letter-spacing: 0.01em;
+    color: #000000;
+    margin: 38px 33px 30px;
+}
+
+.foto{
+    width: 50px;
+    height: 50px;
+    border: none;
+    background-color: #FFFFFF;
+    outline: none;
+}
+
+#projeto_infos {
+    display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: center;
+	align-items: center;
+	align-content: stretch;
+    margin-top: 8vh;
+}
+
+.professor_interesse {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap-reverse;
+	justify-content: flex-start;
+    align-items: center;
+	align-content: center;
+    margin-left: 33px;
+}
+
+#nome_professor, #email_professor{
+    font-family: Lato;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 16px;
+    letter-spacing: 0.01em;
+    color: #A6ACBE;
+    border: none;
+    outline: none;
+    margin: 0;
+}
+
+#nome_professor {
+    font-size: 14px;
+}
+
+#email_professor {
+    text-decoration-line: underline;
+    font-size: 12px;
+}

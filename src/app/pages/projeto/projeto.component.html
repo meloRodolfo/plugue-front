@@ -1,0 +1,30 @@
+<app-header></app-header>
+<div id="projeto_infos">
+  <div class="projeto">
+      <div id="card_header">
+          <h1 class="label_projeto">{{ titulo }}</h1>
+          <div>
+            <button type="button" (click)="deletarProjeto()" class="button_delete"><img src="/assets/stylesheets/img/trash.png" alt="lixo"></button>
+            <button type="button" (click)="atualizarProjeto()" class="button_update"><img src = "assets/stylesheets/img/update.png" alt="avatar"></button>
+          </div>
+      </div>
+  
+      <p class="descricao">{{ descricao }}</p>
+  
+      <div class="area_interesse">
+          <h2>Áreas de interesse:</h2>
+          <button type="button" id="button_1" class="button">{{ areaInteresse }}</button>
+      </div>
+  </div>
+  
+  <div class="professores_interesse">
+    <h1 class="label_interesse">Professores interessados</h1>
+      <div class="professor_interesse" *ngFor="let inter of interessados">
+          <img src = "assets/stylesheets/img/avatar1.png" alt="avatar">
+          <div id="infos_professor">
+            <h6 id="nome_professor">{{ inter.nome }}</h6>
+            <h6 id="email_professor">{{ inter.contato }}</h6>
+          </div>
+      </div>        
+  </div>
+</div>

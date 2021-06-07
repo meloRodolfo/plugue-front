@@ -1,0 +1,40 @@
+<app-header></app-header>
+<div class="repo_ideias">
+    <div class="titulo">
+        <h1 class="titulo">Repositório de ideias</h1>
+        <button class="add_ideia" type="submit" (click)="addProjeto()">+ &nbsp;&nbsp;&nbsp; Adicionar ideia</button>
+    </div>
+    
+
+    <h2>Minhas ideias</h2>
+
+    <div class="minha_ideia">       
+        <ul>
+            <li *ngFor="let res of result">                
+                <div class="card">                    
+                    <h1 class="card-title">{{ res.titulo }}</h1>                          
+                    <p>{{ res.descricao }}</p>  
+                    <a class="mais_info" routerLink='../ideia/{{res.id}}'>Mais informações</a>                      
+                </div>
+            </li>
+        </ul>
+    </div>
+
+    <h2>Projetos de interessse</h2>
+
+    <div class="ideia_interesse">
+        <ul>
+            <li *ngFor="let res of resultInteresse">                
+                <div class="card">
+                    <header>
+                        <h1 class="card-title">{{ res.titulo }}</h1>                            
+                    </header>
+                    <p>
+                        {{ res.descricao }}
+                    </p>                        
+                    <a class="mais_info" routerLink='../projeto/{{res.id}}'>Mais informações</a>                         
+                </div>
+            </li>
+        </ul>   
+    </div>
+</div>

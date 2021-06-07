@@ -1,0 +1,27 @@
+<app-header></app-header>
+<div class="atualizarProjeto">
+    <h1 class="label">Atualizar Projeto</h1>
+    <form action="">
+        <div id="column1">
+            <div class="tituloProjeto">
+                <label for="tituloProjeto">Titulo da Projeto</label>
+                <input type="text" class="tituloProjeto" id="tituloProjeto" value="{{ titulo }}"/>
+            </div>
+    
+            <div class="areaInteresse">
+                <label for="areaInteresse" id="area">Áreas de interesse</label>
+                <input type="text" class="areaInteresse" id="areaInteresse" value="{{ area }}"/>
+            </div>
+        </div>
+        <div id="column2">
+            <div class="descricaoProjeto">
+                <label for="descricaoProjeto">Descrição</label><br>
+                <textarea value="{{ descricao }}" id="descricaoProjeto" class="descricaoProjeto" name="descricaoProjeto" rows="4" cols="50"></textarea>
+            </div>
+            <div id="buttons">
+                <button type="button" class="button_cancelar">CANCELAR</button>
+                <button type="button" class="button_salvar" (click)="atualizarProjeto()">SALVAR</button>
+            </div>
+        </div>
+    </form>
+</div>

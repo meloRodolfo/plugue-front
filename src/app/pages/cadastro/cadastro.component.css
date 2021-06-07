@@ -1,0 +1,110 @@
+.formCadastro{
+	position: absolute;
+    width: 70vw;
+    height: auto;
+    background: #FFFFFF;
+    box-shadow: 0px 5px 30px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+	display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	align-items: center;
+    left: 50%;
+    margin-left: -35vw;
+    top: 2.5vh;
+}
+
+input {
+    width: 673px;
+    height: 45px;
+    margin: 10px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 2px solid rgba(179, 95, 95, 0.6);
+    box-sizing: border-box;
+    border-radius: 6px;
+    outline: none;
+    margin-left: 10%;
+    padding-left: 15px;
+    font-family: Lato;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    color: #4F3938;
+}
+
+button {
+    width: 187px;
+    height: 50px;
+    background: #B35F5F;
+    border: 1.5px solid #B35F5F;
+    box-sizing: border-box;
+    border-radius: 6px;
+    margin-top: 2%;
+    margin-bottom: 3%;
+    font-family: Lato;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 17px;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    cursor: pointer;
+}
+
+button:hover {
+    color: #B35F5F;
+    background: #FFFFFF;
+}
+
+::placeholder {
+    font-family: Lato;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 29px;
+    color: rgba(179, 95, 95, 0.6);
+    padding-left: 15px;
+}
+
+input[type=radio] {
+    border: 1px;
+    width: 6%;
+    height: 1em;
+}
+
+.linhaCheckBox {
+    width: 25%;
+    margin-top: 2%;
+    margin-bottom: 1%;
+    margin-left: 35%;
+
+    height: 29px;
+    left: 582px;
+    top: 273px;
+    font-family: Lato;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 29px;
+    color: #4F3938;
+}
+
+.titulo {
+    margin-left: 35%;
+    height: 40px;
+    font-family: Lato;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 36px;
+    color: #4F3938;
+}
+
+.subTitulo {
+    margin-left: 40%;
+    height: 20px;
+    font-family: Lato;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    color: #B35F5F;
+}
