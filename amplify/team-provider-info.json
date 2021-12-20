@@ -10,6 +10,11 @@
       "StackName": "amplify-pluge-dev-231425",
       "StackId": "arn:aws:cloudformation:us-east-1:816989727726:stack/amplify-pluge-dev-231425/697fad50-524c-11ec-b6d8-0ee5193d3149",
       "AmplifyAppId": "d1re3ahp2sge64"
+    },
+    "categories": {
+      "auth": {
+        "pluge9c5c8b73": {}
+      }
     }
   }
 }
