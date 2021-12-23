@@ -7,8 +7,7 @@ import { AlunoService } from 'src/app/shared/aluno/aluno.service';
 import { Router } from '@angular/router';
 
 import Amplify, { Auth } from 'aws-amplify';
-import awsconfig from '../../../../src/aws-config';
-
+import AWSconfig from '../../../../src/aws-config';
 @Component({
   selector: 'app-cadastro',
   templateUrl: './cadastro.component.html',
@@ -38,6 +37,8 @@ export class CadastroComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    Amplify.configure(AWSconfig);
+    Auth.configure(AWSconfig);
   }
 
   changeUserType() {
@@ -65,7 +66,7 @@ export class CadastroComponent implements OnInit {
     // })
 
     try {
-      await Auth.signUp('email@test.com', '12345')
+      await Auth.signUp('email@test.com', 'SenhaTeste123;')
       console.log('Cadastro efetuado com sucesso')
     } catch (err) {
       console.log('Erro no cadastro do usuário: ', err);
