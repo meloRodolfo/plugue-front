@@ -15,19 +15,19 @@ export class UserService {
     Auth.configure(AWSconfig);
   }
 
-  path: string = 'https://rovssdzugj.execute-api.us-east-1.amazonaws.com/user'
+  path: string = 'https://juf7nz7sri.execute-api.us-east-1.amazonaws.com/dev/user'
 
-  httpOptions = { headers: new HttpHeaders({
-    "Access-Control-Allow-Origin": "*",
-    "Access-Control-Allow-Methods": "GET, POST, OPTIONS, PUT, PATCH, DELETE",
-    "Access-Control-Allow-Headers": "Content-Type, Authorization, Accept, Accept-Language, X-Authorization",
-    "Content-Type": "application/json"
-  })};
+  // httpOptions = { headers: new HttpHeaders({
+  //   "Access-Control-Allow-Origin": "*",
+  //   "Access-Control-Allow-Methods": "GET, POST, OPTIONS, PUT, PATCH, DELETE",
+  //   "Access-Control-Allow-Headers": "Content-Type, Authorization, Accept, Accept-Language, X-Authorization",
+  //   "Content-Type": "application/json"
+  // })};
 
   async createUser(user: any) {
     try {
       // await Auth.signUp(user.email , user.password);
-      this.httpClient.post(this.path, JSON.stringify(user), this.httpOptions).subscribe(
+      this.httpClient.post<any>(this.path, JSON.stringify(user)).subscribe(
         val => {
           console.log("Cadastro efetuado com sucesso", val);
         },

@@ -42,9 +42,10 @@ export class CadastroComponent implements OnInit {
 
   async formAluno() {
 
-    let user: any = {emai: '', password: '', info:{name:'', course:''}};
+    let user: any = {emai: '', password: '', type: '', info:{name:'', course:''}};
     user.email = this.formulario.get("email")?.value;
     user.password = this.formulario.get("senha")?.value;
+    user.type = 'aluno';
 
     user.info.name = this.formulario.get("nome")?.value;
     user.info.course = this.formulario.get("curso")?.value;
@@ -54,9 +55,10 @@ export class CadastroComponent implements OnInit {
 
   formProfessor() {
 
-    let user: any = {emai: '', password: '', info:{name:'', personalPage:''}};
+    let user: any = {emai: '', password: '', type: '', info:{name:'', personalPage:''}};
     user.email = this.formulario.get("email")?.value;
     user.password = this.formulario.get("senha")?.value;
+    user.type = 'professor';
 
     user.info.name = this.formulario.get("nome")?.value;
     user.info.personalPage = this.formulario.get("paginaPessoal")?.value;
