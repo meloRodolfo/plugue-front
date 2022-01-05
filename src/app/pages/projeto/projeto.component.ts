@@ -48,7 +48,6 @@ export class ProjetoComponent implements OnInit {
 
   deletarProjeto() {
     this.projetoService.deletarProjeto(this.id);
-    this.router.navigate(['/repositorio-de-projetos', { id: this.idSession, tipoUsuario: this.tipoSession}]);
   }
 
   atualizarProjeto() {
