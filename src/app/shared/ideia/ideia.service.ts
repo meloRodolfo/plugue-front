@@ -12,22 +12,11 @@ export class IdeiaService {
     private httpClient: HttpClient
   ) { }
 
-  path: string = 'http://127.0.0.1:8080/ideia';
-  // path: string = 'https://plugue.herokuapp.com/ideia';
+  path: string = 'https://juf7nz7sri.execute-api.us-east-1.amazonaws.com/dev/idea';
   result!: Array<Ideia>
 
-  //Headers
-  httpOptions = {
-    headers: new HttpHeaders({
-      "Access-Control-Allow-Origin": "*",
-      "Access-Control-Allow-Methods": "GET, POST, OPTIONS, PUT, PATCH, DELETE",
-      "Access-Control-Allow-Headers": "Content-Type, Authorization, Accept, Accept-Language, X-Authorization",
-      "Content-Type": "application/json"
-    })
-  };
-
   salvaIdeia(ideia: Ideia): Observable<Ideia> {
-    return this.httpClient.post<Ideia>(this.path, JSON.stringify(ideia), this.httpOptions);
+    return this.httpClient.post<Ideia>(this.path, JSON.stringify(ideia));
   }
 
   //Lista todas as ideias
@@ -37,14 +26,12 @@ export class IdeiaService {
 
   //Busca ideias por parâmetros
   buscarIdeias(titulo: string, area: string) {
-    const headers = this.httpOptions.headers
-
     let params = new HttpParams();
     if (titulo) params = params.append('titulo', titulo);
     if (area) params = params.append('areaInteresse', area);
     console.log(params);
 
-    return this.httpClient.get(`${this.path}`, { headers, params }).toPromise()
+    return this.httpClient.get(`${this.path}`, { params }).toPromise()
   }
 
   // Interessar por ideia
@@ -65,18 +52,15 @@ export class IdeiaService {
   // }
 
   getIdeia(id: String) {
-    const headers = this.httpOptions.headers;
-    return this.httpClient.get(`${this.path}/${id}`, { headers }).toPromise();
+    return this.httpClient.get(`${this.path}/${id}`).toPromise();
   }
 
   deletarIdeia(id: String) {
-    const headers = this.httpOptions.headers;
-    return this.httpClient.delete(`${this.path}/${id}`, { headers }).toPromise();
+    return this.httpClient.delete(`${this.path}/${id}`).toPromise();
   }
 
   atualizarIdeia(id: String, ideia: Ideia) {
-    const headers = this.httpOptions.headers;
-    return this.httpClient.put(`${this.path}/${id}`, ideia, { headers }).subscribe(
+    return this.httpClient.put(`${this.path}/${id}`, ideia).subscribe(
       val => {
         console.log("PUT call successful value returned in body", val);
       },

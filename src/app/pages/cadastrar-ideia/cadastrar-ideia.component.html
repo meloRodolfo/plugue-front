@@ -1,22 +1,24 @@
 <app-header></app-header>
-<div class="cadastrarIdeia">
-    <div class="label">
-        <h1>Nova Ideia</h1>
-    </div>
+<div id="cadastrarIdeia">
+    <div id="titulo">Nova Ideia</div>
     <form [formGroup]="formulario" class="cadastrarIdeia" action="" >
-        <div class="tituloIdeia">
-            <label for="tituloIdeia">Titulo da ideia</label>
-            <input type="text" class="tituloIdeia" id="tituloIdeia" formControlName="tituloIdeia"/>
-        </div>
-
-        <div class="areaInteresse">
-            <label for="areaInteresse">Áreas de interesse</label>
-            <input type="text" class="areaInteresse" id="areaInteresse" formControlName="areaInteresse"/>
-        </div>
-
-        <div class="descricaoIdeia">
-            <label for="descricaoIdeia">Descrição</label><br>
-            <textarea class="descricaoIdeia" name="descricaoIdeia" rows="4" cols="50" formControlName="descricaoIdeia"></textarea>
+        <div id="colums">
+            <div>
+                <div class="tituloIdeia">
+                    <label for="tituloIdeia">Titulo da ideia</label>
+                    <input type="text" class="tituloIdeia" id="tituloIdeia" formControlName="tituloIdeia"/>
+                </div>
+        
+                <div class="areaInteresse">
+                    <label for="areaInteresse">Áreas de interesse</label>
+                    <input type="text" class="areaInteresse" id="areaInteresse" formControlName="areaInteresse"/>
+                </div>
+            </div>
+    
+            <div class="descricaoIdeia">
+                <label for="descricaoIdeia">Descrição</label><br>
+                <textarea class="descricaoIdeia" name="descricaoIdeia" rows="4" cols="50" formControlName="descricaoIdeia"></textarea>
+            </div>
         </div>
 
         <button type="button" class="button_cancelar">CANCELAR</button>

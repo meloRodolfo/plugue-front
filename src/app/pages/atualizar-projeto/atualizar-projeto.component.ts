@@ -42,7 +42,6 @@ export class AtualizarProjetoComponent implements OnInit {
     this.projeto.professor = this.professor;
 
     this.projetoService.atualizarProjeto(this.id, this.projeto);
-    this.router.navigate(['/repositorio-de-projetos', { id: this.idSession, tipoUsuario: this.tipoSession}]);
   }
 
 }

@@ -28,12 +28,7 @@ export class HeaderComponent implements OnInit {
   ngOnInit(): void {}
 
   repo(){
-    if(this.tipoSession == 'aluno'){
-      this.router_env.navigate(['/repositorio-de-ideias', { id: this.idSession, tipoUsuario: this.tipoSession}]);
-    }
-    else{
-      this.router_env.navigate(['/repositorio-de-projetos', { id: this.idSession, tipoUsuario: this.tipoSession}]);
-    }  
+    this.router_env.navigate(['/repositorio-de-ideias', { id: this.idSession, tipoUsuario: this.tipoSession}]);
   }
 
   dash(){
