@@ -1,13 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
-import { Aluno } from 'src/app/shared/aluno/aluno';
-import { Professor } from 'src/app/shared/professor/professor';
-import { ProfessorService } from 'src/app/shared/professor/professor.service';
-import { AlunoService } from 'src/app/shared/aluno/aluno.service';
 import { Router } from '@angular/router';
-
 import Amplify, { Auth } from 'aws-amplify';
-import AWSconfig from '../../../../src/aws-config';
+import { UserService } from 'src/app/shared/user/user.service';
+// import AWSconfig from '../../../../src/aws-config';
+// import { UserService } from 'src/app/shared/user/user.service';
 @Component({
   selector: 'app-cadastro',
   templateUrl: './cadastro.component.html',
@@ -15,10 +12,6 @@ import AWSconfig from '../../../../src/aws-config';
 })
 export class CadastroComponent implements OnInit {
 
-  professor: Professor = new Professor();
-  returnProf: Professor = new Professor();
-  aluno: Aluno = new Aluno();
-  returnAluno: Aluno = new Aluno();
   isAluno: boolean = false;
   isProfessor: boolean = true;
 
@@ -31,20 +24,16 @@ export class CadastroComponent implements OnInit {
   });
 
   constructor(
-    private professorService: ProfessorService,
-    private alunoService: AlunoService,
+    private userService: UserService,
     private router: Router
   ) { }
 
   ngOnInit(): void {
-    Amplify.configure(AWSconfig);
-    Auth.configure(AWSconfig);
   }
 
   changeUserType() {
     this.isAluno = !this.isAluno;
     this.isProfessor = !this.isProfessor;
-    console.log(this.isAluno, this.isProfessor)
   }
 
   onSubmit() {
@@ -52,42 +41,29 @@ export class CadastroComponent implements OnInit {
   }
 
   async formAluno() {
-    // this.aluno.nome = this.formulario.get("nome")?.value;
-    // this.aluno.curso = this.formulario.get("curso")?.value;
-    // this.aluno.contato = this.formulario.get("email")?.value;
-    // this.aluno.senha = this.formulario.get("senha")?.value;
-    // this.aluno.tipoUsuario = 'aluno';
-    // this.alunoService.salvaAluno(this.aluno).subscribe(al => {
-    //   this.returnAluno = new Aluno(al);
-    //   console.log(this.returnAluno);
-    //   if(this.returnAluno!=null){
-    //     this.router.navigate(['/home', { id: al.id, tipoUsuario: this.aluno.tipoUsuario}])
-    //   }
-    // })
 
-    try {
-      await Auth.signUp('email@test.com', 'SenhaTeste123;')
-      console.log('Cadastro efetuado com sucesso')
-    } catch (err) {
-      console.log('Erro no cadastro do usuário: ', err);
-    }
+    let user: any = {emai: '', password: '', type: '', info:{name:'', course:''}};
+    user.email = this.formulario.get("email")?.value;
+    user.password = this.formulario.get("senha")?.value;
+    user.type = 'aluno';
 
+    user.info.name = this.formulario.get("nome")?.value;
+    user.info.course = this.formulario.get("curso")?.value;
+
+    this.userService.createUser(user)
   }
 
   formProfessor() {
-    this.professor.nome = this.formulario.get('nome')?.value;
-    this.professor.paginaPessoal = this.formulario.get("paginaPessoal")?.value;
-    this.professor.contato = this.formulario.get("email")?.value;
-    this.professor.senha = this.formulario.get("senha")?.value;
-    this.professor.tipoUsuario = 'professor';
 
-    this.professorService.salvaProfessor(this.professor).subscribe(prof => {
-      this.returnProf = new Professor(prof);
-      console.log(this.returnProf);
-      if(this.returnProf!=null){
-        this.router.navigate(['/home', { id: prof.id, tipoUsuario: this.professor.tipoUsuario}])
-      }
-    });
+    let user: any = {emai: '', password: '', type: '', info:{name:'', personalPage:''}};
+    user.email = this.formulario.get("email")?.value;
+    user.password = this.formulario.get("senha")?.value;
+    user.type = 'professor';
+
+    user.info.name = this.formulario.get("nome")?.value;
+    user.info.personalPage = this.formulario.get("paginaPessoal")?.value;
+
+    this.userService.createUser(user)
   }
 
 }
