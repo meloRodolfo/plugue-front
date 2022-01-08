@@ -1,61 +1,56 @@
-.repo_ideias{    
-    position: relative;
-    top: -25px;
-    background: rgba(179, 95, 95, 0.05);
+body {
+    background: rgba(179, 95, 95, 0.05);;
 }
 
-div.titulo{
-    position: relative;
-    height: 120px;
-}
 
 h1.titulo{
-    position: relative;
-    width: 438px;
-    left: 99px;
-    top: 80px;
     font-family: Lato;
-    font-size: 40px;
-    line-height: 58px;
-    text-align: center;
+    font-size: 2.5em;
     color: #4F3938;
     font-weight: bolder;
+    float: left;
+    margin: 1em;
 }
 
 .add_ideia{
-    position: relative;
     width: 250.07px;
-    height: 46.54px;
-    left: 800.93px;
     border: none;
     background: #B35F5F;
     color: #FFFFFF;
     border-radius: 5px;
     font-size: 20px;
     outline:none;
+    float: right;
+    margin: 2em;
+    padding: 0.7em;
+}
+
+.add_ideia:hover {
+    background-color: #b54f4f;
 }
 
 h2{
-    width: 20vw;
     font-family: Lato;
-    font-size: 25px;
-    line-height: 22px;
-    text-align: center;
+    font-size: 1.5em;
     color: #4F3938;
     font-weight: bolder;
-    padding-top: 60px;
+    display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	align-content: center;
+}
+
+.repo_ideias {
+    display: flex;
+	flex-direction: column;
 }
 
 div.minha_ideia{
     width: 100%;
     height: auto;    
     text-align:center;    
-}
-
-div.ideia_interesse{
-    width: 100%;
-    height: auto;    
-    text-align:center;
 }
 
 .card {
@@ -68,6 +63,14 @@ div.ideia_interesse{
     padding: 40px;
 }
 
+.card-none {
+    width: 35vw;
+    background: #FFFFFF;
+    box-shadow: 0px 5px 30px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    padding: 0.8em;
+}
+
 ul {
     list-style-type: none;
     display: flex;
@@ -77,6 +80,13 @@ ul {
 	align-items: center;
 	align-content: center;
 }
+
+div.ideia_interesse{
+    width: 100%;
+    height: auto;    
+    text-align:center;
+}
+
 
 .card-title {
     margin: -15px;

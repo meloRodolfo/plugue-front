@@ -5,32 +5,31 @@
     </svg>  
   </div>
 
-  <div id="items-background">
-    <button type="submit" (click)="dash()">
+  <div id="header-left">
+    <button class="home-menu" type="submit" (click)="dash()">
       <svg id="home-menu" width="26" height="29" viewBox="0 0 26 29" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path fill-rule="evenodd" clip-rule="evenodd" d="M12.2019 0.277672C12.6713 -0.0925574 13.3287 -0.0925574 13.7981 0.277672L25.4981 9.50494C25.8148 9.75468 26 10.1387 26 10.5455V25.0455C26 26.0943 25.5891 27.1001 24.8577 27.8417C24.1263 28.5834 23.1343 29 22.1 29H3.9C2.86565 29 1.87367 28.5834 1.14228 27.8417C0.410892 27.1001 0 26.0943 0 25.0455V10.5455C0 10.1387 0.185215 9.75468 0.501877 9.50494L12.2019 0.277672ZM2.6 11.1902V25.0455C2.6 25.3951 2.73696 25.7303 2.98076 25.9775C3.22456 26.2248 3.55522 26.3636 3.9 26.3636H22.1C22.4448 26.3636 22.7754 26.2248 23.0192 25.9775C23.263 25.7303 23.4 25.3951 23.4 25.0455V11.1902L13 2.98814L2.6 11.1902Z" fill="#B35F5F"/>
         <path fill-rule="evenodd" clip-rule="evenodd" d="M7.8 14.5C7.8 13.772 8.38203 13.1818 9.1 13.1818H16.9C17.618 13.1818 18.2 13.772 18.2 14.5V27.6818C18.2 28.4098 17.618 29 16.9 29C16.182 29 15.6 28.4098 15.6 27.6818V15.8182H10.4V27.6818C10.4 28.4098 9.81797 29 9.1 29C8.38203 29 7.8 28.4098 7.8 27.6818V14.5Z" fill="#B35F5F"/>
       </svg>
-    </button>          
-  </div>
-
-  <div id="items-background">
-    <button type="submit" (click)="repo()">
+      <p id='dashboard_text'>Dashboard</p>
+    </button>   
+  
+    <button class="idea-menu" type="submit" (click)="repo()">
       <svg id="idea-menu" width="29" height="29" viewBox="0 0 29 29" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path fill-rule="evenodd" clip-rule="evenodd" d="M14.5 0C8.49424 0 3.625 4.86924 3.625 10.875C3.625 15.1472 6.08923 18.8348 9.66667 20.6126V21.75V24.1667C9.66667 26.1687 11.2896 27.7917 13.2917 27.7917H15.7083C17.7104 27.7917 19.3333 26.1687 19.3333 24.1667V21.75V20.6126C22.9108 18.8348 25.375 15.1472 25.375 10.875C25.375 4.86924 20.5058 0 14.5 0ZM16.9167 20.5417V19.8324C16.9167 19.3402 17.2152 18.8972 17.6714 18.7124C20.7737 17.456 22.9583 14.4212 22.9583 10.875C22.9583 6.20393 19.1711 2.41667 14.5 2.41667C9.82893 2.41667 6.04167 6.20393 6.04167 10.875C6.04167 14.4212 8.22631 17.456 11.3286 18.7124C11.7848 18.8972 12.0833 19.3402 12.0833 19.8324V20.5417H16.9167ZM12.0833 22.9583V24.1667C12.0833 24.834 12.6243 25.375 13.2917 25.375H15.7083C16.3757 25.375 16.9167 24.834 16.9167 24.1667V22.9583H12.0833Z" fill="#B35F5F"/>
         <path fill-rule="evenodd" clip-rule="evenodd" d="M14.4999 7.24992C12.4981 7.24992 10.8749 8.87305 10.8749 10.8749C10.8749 11.5423 10.3339 12.0833 9.66659 12.0833C8.99924 12.0833 8.45825 11.5423 8.45825 10.8749C8.45825 7.53837 11.1634 4.83325 14.4999 4.83325C15.1673 4.83325 15.7083 5.37424 15.7083 6.04159C15.7083 6.70893 15.1673 7.24992 14.4999 7.24992Z" fill="#B35F5F"/>
       </svg>
-    </button>      
+      <p id='ideas_text'>Repositório de Ideias</p>
+    </button>  
   </div>
 
-  <div id="items-background">
-    <button type="submit" onclick="location.href='../'">
-      <svg id="logout" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M11.25 26.25H6.25C5.58696 26.25 4.95107 25.9866 4.48223 25.5178C4.01339 25.0489 3.75 24.413 3.75 23.75V6.25C3.75 5.58696 4.01339 4.95107 4.48223 4.48223C4.95107 4.01339 5.58696 3.75 6.25 3.75H11.25" stroke="#98B3AA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        <path d="M20 21.25L26.25 15L20 8.75" stroke="#98B3AA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        <path d="M26.25 15H11.25" stroke="#98B3AA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-      </svg>
-    </button>
-  </div>
+  <button class="logout" type="submit" onclick="location.href='../'">
+    <p id='logout_text'>Sair</p>
+    <svg id="logout" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M11.25 26.25H6.25C5.58696 26.25 4.95107 25.9866 4.48223 25.5178C4.01339 25.0489 3.75 24.413 3.75 23.75V6.25C3.75 5.58696 4.01339 4.95107 4.48223 4.48223C4.95107 4.01339 5.58696 3.75 6.25 3.75H11.25" stroke="#98B3AA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M20 21.25L26.25 15L20 8.75" stroke="#98B3AA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M26.25 15H11.25" stroke="#98B3AA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </button>
       
 </header>

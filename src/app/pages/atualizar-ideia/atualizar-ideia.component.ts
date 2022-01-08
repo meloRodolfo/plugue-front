@@ -35,11 +35,10 @@ export class AtualizarIdeiaComponent implements OnInit {
   }
 
   atualizarIdeia() {
-    this.ideia.titulo = (document.getElementById('tituloIdeia') as HTMLInputElement).value;
-    this.ideia.descricao = (document.getElementById('descricaoIdeia') as HTMLInputElement).value;
-    this.ideia.areaInteresse = (document.getElementById('areaInteresse') as HTMLInputElement).value;
-    this.ideia.professores = this.professores;
-    this.ideia.aluno = this.aluno;
+    this.ideia.title = (document.getElementById('tituloIdeia') as HTMLInputElement).value;
+    this.ideia.description = (document.getElementById('descricaoIdeia') as HTMLInputElement).value;
+    this.ideia.area_of_interest = (document.getElementById('areaInteresse') as HTMLInputElement).value;
+    this.ideia.author = this.aluno;
 
     this.ideiaService.atualizarIdeia(this.id, this.ideia);
     this.router.navigate(['/repositorio-de-ideias', { id: this.idSession, tipoUsuario: this.tipoSession}]);

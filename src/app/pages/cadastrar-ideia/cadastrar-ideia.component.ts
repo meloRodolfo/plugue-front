@@ -42,10 +42,11 @@ export class CadastrarIdeiaComponent implements OnInit {
 
   formIdeia() {
     this.aluno.id = this.idUsuario;
-    this.ideia.titulo = this.formulario.get("tituloIdeia")?.value;
-    this.ideia.areaInteresse = this.formulario.get("areaInteresse")?.value;
-    this.ideia.descricao = this.formulario.get("descricaoIdeia")?.value;
-    this.ideia.aluno = this.aluno
+    this.ideia.title = this.formulario.get("tituloIdeia")?.value;
+    this.ideia.area_of_interest = this.formulario.get("areaInteresse")?.value;
+    this.ideia.description = this.formulario.get("descricaoIdeia")?.value;
+    this.ideia.author = this.aluno
+    this.ideia.status = 'in progress'
     console.log(this.ideia)
     console.log(this.aluno)
     this.ideiaService.salvaIdeia(this.ideia).subscribe(ideia => {

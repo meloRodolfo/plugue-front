@@ -16,6 +16,7 @@ export class IdeiaService {
   result!: Array<Ideia>
 
   salvaIdeia(ideia: Ideia): Observable<Ideia> {
+    console.log(JSON.stringify(ideia))
     return this.httpClient.post<Ideia>(this.path, JSON.stringify(ideia));
   }
 

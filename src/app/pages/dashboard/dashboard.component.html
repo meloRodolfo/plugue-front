@@ -18,15 +18,15 @@
 			<li *ngFor="let i of ideias">
 				<div class="card">
 					<header>
-						<h1 class="card-title">{{ i.titulo }}</h1>
-						<h6> {{ i.areaInteresse }} </h6>
+						<h1 class="card-title">{{ i.title }}</h1>
+						<h6> {{ i.area_of_interest }} </h6>
 					</header>
 					<p>
-						{{ i.descricao }}
+						{{ i.description }}
 					</p>
 					<footer>
 						<img src="./../../../assets/stylesheets/img/avatar3.png">
-						<h4>{{ i.aluno.nome }}</h4>
+						<h4>{{ i.author.nome }}</h4>
 						<button id="btn-interest" type="button" (click)="interessaIdeia(i.id)">Candidatar-se</button>
 					</footer>
 				</div>
