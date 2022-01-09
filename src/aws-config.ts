@@ -3,7 +3,7 @@ const awsconfig = {
     region: "us-east-1",
     identityPoolRegion: "us-east-1",
     userPoolId: "us-east-1_O1wzsbyBj",
-    userPoolWebClientId: "7bt3aitak9g2jti9169kud3c6b",
+    userPoolWebClientId: "3khviq9urqa1s31277dpkme522",
 }
 
 export default awsconfig;

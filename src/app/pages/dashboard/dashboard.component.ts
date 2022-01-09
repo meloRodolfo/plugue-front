@@ -37,7 +37,6 @@ export class DashboardComponent implements OnInit {
     this.idUsuario = this.route.snapshot.paramMap.get('id');
     this.tipoUsuario = this.route.snapshot.paramMap.get('tipoUsuario');
     sessionStorage.setItem('id', this.idUsuario);
-    sessionStorage.setItem('tipo', this.tipoUsuario);
    }
 
   ngOnInit(): void {
