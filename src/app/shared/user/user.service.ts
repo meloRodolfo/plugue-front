@@ -43,4 +43,13 @@ export class UserService {
       console.log('Erro no cadastro do usuário: ', err);
     }
   }
+
+  async authenticateUser (email: string, password: string) {
+    try {
+      const { user } = await Auth.signIn(email, password);
+      console.log("Usuário autenticado com sucesso ", user);
+    } catch (err) {
+      console.log('Erro na autenticação do usuário: ', err);
+    }
+  }
 }
