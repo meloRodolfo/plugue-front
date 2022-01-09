@@ -48,6 +48,7 @@ export class UserService {
     try {
       const { user } = await Auth.signIn(email, password);
       console.log("Usuário autenticado com sucesso ", user);
+      this.router.navigate(['/home', { id: user }]);
     } catch (err) {
       console.log('Erro na autenticação do usuário: ', err);
     }
