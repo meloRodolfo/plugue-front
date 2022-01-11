@@ -14,7 +14,7 @@ import { AlunoService } from 'src/app/shared/aluno/aluno.service';
 })
 export class DashboardComponent implements OnInit {
 
-  ideias!: Array<Ideia>;
+  ideias!: Array<any>;
   projetos!: Array<Projeto>;
   tipoUsuario: any = '';
   idUsuario: any = '';
@@ -40,26 +40,17 @@ export class DashboardComponent implements OnInit {
    }
 
   ngOnInit(): void {
-    this.checkUserType();
-    this.ideias = [];
-    this.projetos = [];
-  }
-
-  checkUserType() {
-    if (this.tipoUsuario == 'aluno') {
-      this.isAluno = true;
-      this.listaProjetos();
-    } else if (this.tipoUsuario == 'professor') {
-      this.isProfessor = true;
-      this.listaIdeias();
-    }
+    this.ideias;
+    this.listaIdeias();
   }
 
   listaIdeias() {
-    this.ideiaService.listarIdeias().subscribe(ideias => {
-      ideias.forEach(i => {
-        this.ideias.push(i)
-      });
+    this.ideiaService.listarIdeias(this.idUsuario).subscribe((ideias) => {
+      const objectArray = Object.entries(ideias);
+      objectArray.forEach(([key, value]) => {
+        if(key === 'interestingIdeas') this.ideias = value;
+      })
+      console.log(this.ideias);
     });
   }
 
@@ -73,20 +64,14 @@ export class DashboardComponent implements OnInit {
     })
   }
 
-  buscaPorParametros() {
-    if (this.isAluno) this.buscaProjetos();
-    if (this.isProfessor) this.buscaIdeias();
-  }
-
   buscaIdeias() {
     this.ideias = [];
     this.ideiaService.buscarIdeias(this.formularioBusca.get('titulo')?.value,
       this.formularioBusca.get('area')?.value).then(ideias => {
         const objectArray = Object.entries(ideias);
         objectArray.forEach(([key, value]) => {
-          this.ideias.push(value);
+          if(key === 'interestingIdeas') this.ideias = value;
         })
-        console.log(this.ideias);
       });
   }
 

@@ -1,4 +1,4 @@
-import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Ideia } from './ideia';
@@ -21,15 +21,15 @@ export class IdeiaService {
   }
 
   //Lista todas as ideias
-  listarIdeias() {
-    return this.httpClient.get<Array<Ideia>>(this.path);
+  listarIdeias(id: string) {
+    return this.httpClient.get<Array<any>>(`${this.path}?userId=${id}`);
   }
 
   //Busca ideias por parâmetros
   buscarIdeias(titulo: string, area: string) {
     let params = new HttpParams();
-    if (titulo) params = params.append('titulo', titulo);
-    if (area) params = params.append('areaInteresse', area);
+    if (titulo) params = params.append('title', titulo);
+    if (area) params = params.append('area_of_interest', area);
     console.log(params);
 
     return this.httpClient.get(`${this.path}`, { params }).toPromise()
