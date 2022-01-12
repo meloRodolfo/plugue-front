@@ -28,12 +28,6 @@ export class LoginComponent implements OnInit {
   }
 
   login() {
-    // this.usuarioService.fazerLogin(this.formulario.get('email')?.value, this.formulario.get('senha')?.value).subscribe( usr => {
-    //   this.usuario = usr;
-    //   if(this.formulario.get('email')?.value == this.usuario.contato && this.formulario.get('senha')?.value == this.usuario.senha){
-    //     this.router.navigate(['/home', { id: this.usuario.id, tipoUsuario: this.usuario.tipoUsuario}])
-    //   }
-    // });
     let email = this.formulario.get('email')?.value;
     let password = this.formulario.get('senha')?.value;
     this.userService.authenticateUser(email, password);
