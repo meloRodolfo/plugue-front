@@ -18,12 +18,12 @@
   </div>
   
   <div class="alunos_interesse">
-    <h1 class="label_interesse">Estudantes interessados</h1>
+    <h1 class="label_interesse">Interessados</h1>
       <div class="aluno_interesse" *ngFor="let inter of interessados">
           <img src = "assets/stylesheets/img/avatar1.png" alt="avatar">
           <div id="infos_aluno">
-            <h6 id="nome_aluno">{{ inter.nome }}</h6>
-            <h6 id="email_aluno">{{ inter.contato }}</h6>
+            <h6 id="nome_aluno">{{ inter.type }}</h6>
+            <h6 id="email_aluno">{{ inter.email }}</h6>
           </div>
       </div>        
   </div>

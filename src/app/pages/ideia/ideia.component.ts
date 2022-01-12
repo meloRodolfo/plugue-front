@@ -45,7 +45,7 @@ export class IdeiaComponent implements OnInit {
         if(key === 'title') this.titulo = value;
         if(key === 'area_of_interest') this.areaInteresse = value;
         if(key === 'description') this.descricao = value;
-        // if(key === 'professores') this.interessados = value;
+        if(key === 'users') this.interessados = value;
         // if(key === 'aluno') this.criador = value.id;
       })
     });

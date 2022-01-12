@@ -17,6 +17,7 @@ export class DashboardComponent implements OnInit {
 
   ideias!: Array<any>;
   minhasIdeias!: Array<any>;
+  ideiasDeInteresse!: Array<any>;
   projetos!: Array<Projeto>;
   tipoUsuario: any = '';
   idUsuario: any = '';
@@ -33,8 +34,6 @@ export class DashboardComponent implements OnInit {
     private route: ActivatedRoute,
     private ideiaService: IdeiaService,
     private projetoService: ProjetoService,
-    private professorService: ProfessorService,
-    private alunoService: AlunoService,
     private usuarioService: UserService
   ) {
     this.idUsuario = this.route.snapshot.paramMap.get('id');
@@ -45,7 +44,9 @@ export class DashboardComponent implements OnInit {
   ngOnInit(): void {
     this.ideias;
     this.minhasIdeias;
+    this.ideiasDeInteresse;
     this.listaIdeias();
+    this.listaInteresse();
   }
 
   listaIdeias() {
@@ -57,6 +58,12 @@ export class DashboardComponent implements OnInit {
       })
       console.log(this.ideias);
     });
+  }
+
+  listaInteresse() {
+    this.usuarioService.getInterestingIdeas(this.idUsuario).then(({ idea }) => {
+      this.ideiasDeInteresse = idea
+    })
   }
 
   listaProjetos() {

@@ -67,4 +67,8 @@ export class UserService {
       console.log('Erro na autenticação do usuário: ', err);
     }
   }
+
+  getInterestingIdeas(userId: string): Promise<Object|any> {
+    return this.httpClient.get<Array<any>>(`${this.path}/${userId}/interest/ideas`).toPromise();
+  }
 }
