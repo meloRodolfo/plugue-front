@@ -7,6 +7,7 @@ import { Projeto } from 'src/app/shared/projeto/projeto';
 import { ProjetoService } from 'src/app/shared/projeto/projeto.service';
 import { ProfessorService } from 'src/app/shared/professor/professor.service';
 import { AlunoService } from 'src/app/shared/aluno/aluno.service';
+import { UserService } from 'src/app/shared/user/user.service'
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
@@ -15,6 +16,7 @@ import { AlunoService } from 'src/app/shared/aluno/aluno.service';
 export class DashboardComponent implements OnInit {
 
   ideias!: Array<any>;
+  minhasIdeias!: Array<any>;
   projetos!: Array<Projeto>;
   tipoUsuario: any = '';
   idUsuario: any = '';
@@ -32,7 +34,8 @@ export class DashboardComponent implements OnInit {
     private ideiaService: IdeiaService,
     private projetoService: ProjetoService,
     private professorService: ProfessorService,
-    private alunoService: AlunoService
+    private alunoService: AlunoService,
+    private usuarioService: UserService
   ) {
     this.idUsuario = this.route.snapshot.paramMap.get('id');
     this.tipoUsuario = this.route.snapshot.paramMap.get('tipoUsuario');
@@ -41,6 +44,7 @@ export class DashboardComponent implements OnInit {
 
   ngOnInit(): void {
     this.ideias;
+    this.minhasIdeias;
     this.listaIdeias();
   }
 
@@ -49,6 +53,7 @@ export class DashboardComponent implements OnInit {
       const objectArray = Object.entries(ideias);
       objectArray.forEach(([key, value]) => {
         if(key === 'interestingIdeas') this.ideias = value;
+        if(key === 'myIdeas') this.minhasIdeias = value;
       })
       console.log(this.ideias);
     });
@@ -71,6 +76,7 @@ export class DashboardComponent implements OnInit {
         const objectArray = Object.entries(ideias);
         objectArray.forEach(([key, value]) => {
           if(key === 'interestingIdeas') this.ideias = value;
+          if(key === 'myIdeas') this.minhasIdeias = value;
         })
       });
   }
@@ -87,11 +93,8 @@ export class DashboardComponent implements OnInit {
       });
   }
 
-  interessaIdeia(idIdeia: Number) {
-    this.professorService.applyIdea(this.idUsuario, idIdeia);
-  }
-
-  interessaProjeto(idProjeto: Number) {
-    this.alunoService.applyIdea(this.idUsuario, idProjeto);
+  interessaIdeia(idIdeia: String) {
+    console.log("cliquei")
+    this.usuarioService.applyIdea(this.idUsuario, idIdeia);
   }
 }

@@ -43,4 +43,18 @@ export class UserService {
       console.log('Erro no cadastro do usuário: ', err);
     }
   }
+
+  applyIdea(idUser: String, idIdeia: String) {
+    this.httpClient.post<any>(`${this.path}/${idUser}/idea/${idIdeia}/interest`, '{}').subscribe(
+      val => {
+        console.log("Interesse efetuado com sucesso", val);
+      },
+      response => {
+          console.log("Erro na hora de interessar-se por ideia", response);
+      },
+      () => {
+          console.log("The POST observable is now completed.");
+      }
+    );
+  }
 }
