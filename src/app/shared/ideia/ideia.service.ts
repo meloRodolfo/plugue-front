@@ -26,7 +26,7 @@ export class IdeiaService {
   }
 
   buscarIdeiasPorAutor(author: string) {
-    return this.httpClient.get<Array<any>>(`${this.path}?author=${author}`);
+    return this.httpClient.get<Array<any>>(`${this.path}?userId=${author}`);
   }
 
   //Busca ideias por parâmetros
@@ -39,24 +39,7 @@ export class IdeiaService {
     return this.httpClient.get(`${this.path}`, { params }).toPromise()
   }
 
-  // Interessar por ideia
-  // applyIdea() {
-  //   const headers = this.httpOptions.headers
-
-  //   this.httpClient.put(`${this.path}/${"teste"}/ideia/${"38"}`, {}, { headers }).subscribe(
-  //     val => {
-  //       console.log("PUT call successful value returned in body", val);
-  //     },
-  //     response => {
-  //       console.log("PUT call in error", response);
-  //     },
-  //     () => {
-  //       console.log("The PUT observable is now completed.");
-  //     }
-  //   );
-  // }
-
-  getIdeia(id: String) {
+  getIdeia(id: String): Promise<Object|any> {
     return this.httpClient.get(`${this.path}/${id}`).toPromise();
   }
 

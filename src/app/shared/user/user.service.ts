@@ -57,7 +57,7 @@ export class UserService {
       }
     );
   }
-  
+
   async authenticateUser (email: string, password: string) {
     try {
       const { user } = await Auth.signIn(email, password);

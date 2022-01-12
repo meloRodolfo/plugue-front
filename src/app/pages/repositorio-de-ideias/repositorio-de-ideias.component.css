@@ -54,8 +54,7 @@ div.minha_ideia{
 }
 
 .card {
-    width: 35vw;
-    height: 5vw;
+    width: 30vw;
     margin: 1vw 1vw;
     background: #FFFFFF;
     box-shadow: 0px 5px 30px rgba(0, 0, 0, 0.1);
@@ -64,7 +63,7 @@ div.minha_ideia{
 }
 
 .card-none {
-    width: 35vw;
+    width: 30vw;
     background: #FFFFFF;
     box-shadow: 0px 5px 30px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
@@ -108,6 +107,7 @@ p {
     white-space: nowrap; 
     overflow: hidden; 
     text-overflow: ellipsis;
+    margin: auto;
 }
 
 a.mais_info{

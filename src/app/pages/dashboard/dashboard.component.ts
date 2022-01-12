@@ -94,7 +94,6 @@ export class DashboardComponent implements OnInit {
   }
 
   interessaIdeia(idIdeia: String) {
-    console.log("cliquei")
     this.usuarioService.applyIdea(this.idUsuario, idIdeia);
   }
 }

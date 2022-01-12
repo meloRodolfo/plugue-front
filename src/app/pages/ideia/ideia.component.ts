@@ -11,10 +11,10 @@ import { IdeiaService } from 'src/app/shared/ideia/ideia.service';
 export class IdeiaComponent implements OnInit {
   id: string
   readonly apiURL : string;
-  titulo : string;
-  descricao: string;
-  areaInteresse: string;
-  interessados: Array<any>;
+  titulo : any;
+  descricao: any;
+  areaInteresse: any;
+  interessados: any;
   criador: number;
   idSession: any = '';
   tipoSession: any = '';
@@ -37,17 +37,19 @@ export class IdeiaComponent implements OnInit {
   }
 
   getIdeia() {
-    this.ideiaService.getIdeia(this.id).then(ideia => {
-      const objectArray = Object.entries(ideia);
+    this.ideiaService.getIdeia(this.id).then(({ idea }) => {
+      const objectArray = Object.entries(idea);
+
       objectArray.forEach(([ key, value ]) => {
-        console.log(key, value)
-        if(key === 'titulo') this.titulo = value;
-        if(key === 'areaInteresse') this.areaInteresse = value;
-        if(key === 'descricao') this.descricao = value;
-        if(key === 'professores') this.interessados = value;
-        if(key === 'aluno') this.criador = value.id;
+        console.log(key, "#######", value)
+        if(key === 'title') this.titulo = value;
+        if(key === 'area_of_interest') this.areaInteresse = value;
+        if(key === 'description') this.descricao = value;
+        // if(key === 'professores') this.interessados = value;
+        // if(key === 'aluno') this.criador = value.id;
       })
     });
+
     console.log('variavel de seção ideia =',this.idSession);
   }
 

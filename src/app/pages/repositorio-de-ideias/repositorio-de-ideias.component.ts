@@ -32,7 +32,7 @@ export class RepositorioDeIdeiasComponent implements OnInit {
 
   ngOnInit(): void {
     this.listarIdeiasPorAutor();
-    this.listInteresse();
+    // this.listInteresse();
   }
 
   // listIdeas() {
@@ -56,7 +56,7 @@ export class RepositorioDeIdeiasComponent implements OnInit {
     this.ideiaService.buscarIdeiasPorAutor(this.idUsuario).subscribe((ideias) => {
       const objectArray = Object.entries(ideias);
       objectArray.forEach(([key, value]) => {
-        if(key === 'interestingIdeas') this.result = value;
+        if(key === 'myIdeas') this.result = value;
       })
       console.log(this.result);
     });
