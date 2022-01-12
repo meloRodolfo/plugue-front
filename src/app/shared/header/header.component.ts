@@ -11,7 +11,7 @@ import { dashCaseToCamelCase } from '@angular/compiler/src/util';
 })
 export class HeaderComponent implements OnInit {
 
-  idSession: any = '';
+  idUsuario: any = '';
   tipoSession: any = '';
 
   constructor(
@@ -19,7 +19,7 @@ export class HeaderComponent implements OnInit {
     private route_rec: ActivatedRoute,
     private router_env: Router
   ) {
-    this.idSession = sessionStorage.getItem("id");
+    this.idUsuario = sessionStorage.getItem("id");
     this.tipoSession = sessionStorage.getItem("tipo");
    }
 
@@ -28,15 +28,15 @@ export class HeaderComponent implements OnInit {
   ngOnInit(): void {}
 
   repo(){
-    this.router_env.navigate(['/repositorio-de-ideias', { id: this.idSession, tipoUsuario: this.tipoSession}]);
+    this.router_env.navigate(['/repositorio-de-ideias', { id: this.idUsuario, tipoUsuario: this.tipoSession}]);
   }
 
   dash(){
     if(this.tipoSession == 'aluno'){
-      this.router_env.navigate(['/home', { id: this.idSession, tipoUsuario: this.tipoSession}]);
+      this.router_env.navigate(['/home', { id: this.idUsuario, tipoUsuario: this.tipoSession}]);
     }
     else{
-      this.router_env.navigate(['/home', { id: this.idSession, tipoUsuario: this.tipoSession}]);
+      this.router_env.navigate(['/home', { id: this.idUsuario, tipoUsuario: this.tipoSession}]);
     } 
   }
 }

@@ -25,6 +25,10 @@ export class IdeiaService {
     return this.httpClient.get<Array<any>>(`${this.path}?userId=${id}`);
   }
 
+  buscarIdeiasPorAutor(author: string) {
+    return this.httpClient.get<Array<any>>(`${this.path}?author=${author}`);
+  }
+
   //Busca ideias por parâmetros
   buscarIdeias(titulo: string, area: string) {
     let params = new HttpParams();
