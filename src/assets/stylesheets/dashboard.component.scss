@@ -61,17 +61,42 @@ input {
 
 .card {
     width: 50vw;
-    margin: 1vw 5vw;
+    margin: 1vw 2vw;
     background: #FFFFFF;
     box-shadow: 0px 5px 30px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
     padding: 30px;
 }
 
-.card-title, p, h6 {
+.card-info {
+    width: 20vw;
+    margin: 1vw 5vw;
+    background: #FFFFFF;
+    box-shadow: 0px 5px 30px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    padding: 15px;
+    display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	align-items: center;
+	align-content: center;
+}
+
+.card-title, p, h6, h1, h3 {
     font-family: Lato;
     font-style: normal;
     font-weight: normal;
+}
+
+h1 {
+    font-size: 28px;
+    font-weight: bold;
+}
+
+h3 {
+    font-size: 14px;
+    color: $gray;
 }
 
 .card-title {
@@ -114,8 +139,8 @@ footer {
 #btn-interest {
     margin-left: auto;
     padding: 10px;
-    background-color: transparentize($main-color, 0.60);
-    color: $main-color;
+    background-color: transparentize($blue, 0.60);
+    color: $blue;
     border-style: none;
     border-radius: 6px;
     font-family: Lato;
@@ -125,15 +150,29 @@ footer {
 }
 
 #btn-interest:hover {
-    background-color: transparentize($main-color, 0.40);;
+    background-color: transparentize($blue, 0.40);;
+}
+
+#dash {
+    display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: center;
+	align-items: stretch;
+	align-content: stretch;
 }
 
 ul {
     list-style-type: none;
 }
 
-#ideas {
+#ideas, #infos {
     margin-top: 5vw;
+}
+
+#infos, #ul-infos {
+    margin-left: 0;
+    padding-left: 0;
 }
 
 header {
@@ -143,4 +182,29 @@ header {
 	justify-content: flex-start;
 	align-items: stretch;
 	align-content: stretch;
+}
+
+.icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+#proj-icon {
+    background-color: transparentize($dark-color, 0.95);
+}
+
+#peo-icon {
+    background-color: transparentize($main-color, 0.90);
+}
+
+#int-icon {
+    background-color: $yellow
+}
+
+.info-icon {
+    display: flex;
+	margin: auto;
+    transform: translateY(50%);
+    top: 50%
 }

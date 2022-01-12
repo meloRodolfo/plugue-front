@@ -13,24 +13,63 @@
 		</form>
 		<button id="btn-search" type="button" (click)="buscaIdeias()">Buscar</button>
 	</div>
-	<div id="ideas">
-		<ul>
-			<li *ngFor="let i of ideias">
-				<div class="card">
-					<header>
-						<h1 class="card-title">{{ i.title }}</h1>
-						<h6> {{ i.area_of_interest }} </h6>
-					</header>
-					<p>
-						{{ i.description }}
-					</p>
-					<footer>
-						<img src="./../../../assets/stylesheets/img/avatar3.png">
-						<h4>{{ i.author }}</h4>
-						<button id="btn-interest" type="button" (click)="interessaIdeia(i.id)">Candidatar-se</button>
-					</footer>
-				</div>
-			</li>
-		</ul>
+	<div id="dash">
+		<div id="ideas">
+			<ul>
+				<li *ngFor="let i of ideias">
+					<div class="card">
+						<header>
+							<h1 class="card-title">{{ i.title }}</h1>
+							<h6> {{ i.area_of_interest }} </h6>
+						</header>
+						<p>
+							{{ i.description }}
+						</p>
+						<footer>
+							<img src="./../../../assets/stylesheets/img/avatar3.png">
+							<h4>{{ i.author }}</h4>
+							<button id="btn-interest" type="button" (click)="interessaIdeia(i.id)">Candidatar-se</button>
+						</footer>
+					</div>
+				</li>
+			</ul>
+		</div>
+		<div id="infos">
+			<ul id="ul-infos">
+				<li>
+					<div class="card-info">
+						<div id="proj-icon" class="icon">
+							<img class="info-icon" src="./../../../assets/stylesheets/img/book.png">
+						</div>
+						<div id="texts">
+							<h1>{{ minhasIdeias.length }}</h1>
+							<h3>Projetos pessoais</h3>
+						</div>
+					</div>
+				</li>
+				<li>
+					<div class="card-info">
+						<div id="peo-icon" class="icon">
+							<img class="info-icon" src="./../../../assets/stylesheets/img/person.png">
+						</div>
+						<div id="texts">
+							<h1>1</h1>
+							<h3>Pessoas interessadas</h3>
+						</div>
+					</div>
+				</li>
+				<li>
+					<div class="card-info">
+						<div id="int-icon" class="icon">
+							<img class="info-icon" src="./../../../assets/stylesheets/img/star.png">
+						</div>
+						<div id="texts">
+							<h1>1</h1>
+							<h3>Projetos de interesse</h3>
+						</div>
+					</div>
+				</li>
+			</ul>
+		</div>
 	</div>
 </body>
