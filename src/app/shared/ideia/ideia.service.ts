@@ -49,16 +49,13 @@ export class IdeiaService {
     return this.httpClient.delete(`${this.path}/${id}`).toPromise();
   }
 
-  atualizarIdeia(id: String, ideia: Ideia) {
-    return this.httpClient.put(`${this.path}/${id}`, ideia).subscribe(
+  atualizarIdeia(id: String, ideia: Ideia): Promise<Object|any> {
+    return this.httpClient.post(`${this.path}/${id}`, JSON.stringify(ideia)).toPromise().then(
       val => {
         console.log("PUT call successful value returned in body", val);
       },
       response => {
         console.log("PUT call in error", response);
-      },
-      () => {
-        console.log("The PUT observable is now completed.");
       }
     );
   }

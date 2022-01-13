@@ -53,6 +53,7 @@ export class RepositorioDeIdeiasComponent implements OnInit {
   // }
 
   listarIdeiasPorAutor() {
+    this.result = [];
     this.ideiaService.buscarIdeiasPorAutor(this.idUsuario).subscribe((ideias) => {
       const objectArray = Object.entries(ideias);
       objectArray.forEach(([key, value]) => {
