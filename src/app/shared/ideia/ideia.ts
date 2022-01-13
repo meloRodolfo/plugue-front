@@ -6,7 +6,7 @@ export class Ideia {
     area_of_interest!: String
     description!: String
     title!: String
-    AuthorId!: Aluno
+    AuthorId!: String
     status!: String
 
     constructor(json?: Ideia) {
