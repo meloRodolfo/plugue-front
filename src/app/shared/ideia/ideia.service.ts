@@ -15,9 +15,9 @@ export class IdeiaService {
   path: string = 'https://juf7nz7sri.execute-api.us-east-1.amazonaws.com/dev/idea';
   result!: Array<Ideia>
 
-  salvaIdeia(ideia: Ideia): Observable<Ideia> {
+  salvaIdeia(ideia: Ideia): Promise<Object|any> {
     console.log(JSON.stringify(ideia))
-    return this.httpClient.post<Ideia>(this.path, JSON.stringify(ideia));
+    return this.httpClient.post<Ideia>(this.path, JSON.stringify(ideia)).toPromise();
   }
 
   //Lista todas as ideias
@@ -49,16 +49,13 @@ export class IdeiaService {
     return this.httpClient.delete(`${this.path}/${id}`).toPromise();
   }
 
-  atualizarIdeia(id: String, ideia: Ideia) {
-    return this.httpClient.put(`${this.path}/${id}`, ideia).subscribe(
+  atualizarIdeia(id: String, ideia: Ideia): Promise<Object|any> {
+    return this.httpClient.post(`${this.path}/${id}`, JSON.stringify(ideia)).toPromise().then(
       val => {
         console.log("PUT call successful value returned in body", val);
       },
       response => {
         console.log("PUT call in error", response);
-      },
-      () => {
-        console.log("The PUT observable is now completed.");
       }
     );
   }

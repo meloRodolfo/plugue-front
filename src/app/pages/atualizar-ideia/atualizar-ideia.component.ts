@@ -34,13 +34,13 @@ export class AtualizarIdeiaComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  atualizarIdeia() {
+  async atualizarIdeia() {
     this.ideia.title = (document.getElementById('tituloIdeia') as HTMLInputElement).value;
     this.ideia.description = (document.getElementById('descricaoIdeia') as HTMLInputElement).value;
     this.ideia.area_of_interest = (document.getElementById('areaInteresse') as HTMLInputElement).value;
-    // this.ideia.AuthorId = this.aluno;
+    this.ideia.AuthorId = this.aluno.id.toString();
 
-    this.ideiaService.atualizarIdeia(this.id, this.ideia);
+    await this.ideiaService.atualizarIdeia(this.id, this.ideia);
     this.router.navigate(['/repositorio-de-ideias', { id: this.idSession, tipoUsuario: this.tipoSession}]);
   }
 }
