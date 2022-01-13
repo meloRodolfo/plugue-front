@@ -30,11 +30,13 @@ export class IdeiaService {
   }
 
   //Busca ideias por parâmetros
-  buscarIdeias(titulo: string, area: string) {
+  buscarIdeias(titulo: string, area: string, autor: string, user: string) {
     let params = new HttpParams();
     if (titulo) params = params.append('title', titulo);
     if (area) params = params.append('area_of_interest', area);
-    console.log(params);
+    if (autor) params = params.append('author', autor);
+
+    params = params.append('userId', user);
 
     return this.httpClient.get(`${this.path}`, { params }).toPromise()
   }

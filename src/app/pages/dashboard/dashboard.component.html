@@ -7,6 +7,10 @@
 				<input type="text" id="title" name="title" formControlName="titulo"><br>
 			</div>
 			<div class="search-tools">
+				<label for="author">Autor</label><br>
+				<input type="text" id="author" name="author" formControlName="autor"><br>
+			</div>
+			<div class="search-tools">
 				<label for="area">Areas de Interesse</label><br>
 				<input type="text" id="area" name="area" formControlName="area">
 			</div>
@@ -27,9 +31,19 @@
 						</p>
 						<footer>
 							<img src="./../../../assets/stylesheets/img/avatar3.png">
-							<h4>{{ i.Author.name }}</h4>
+							<div *ngFor="let j of i.Author.infos">
+								<h4 *ngIf="j.type==='name'">{{ j.value }}</h4>
+							</div>
 							<button id="btn-interest" type="button" (click)="interessaIdeia(i.id)">Candidatar-se</button>
 						</footer>
+					</div>
+				</li>
+
+				<li *ngIf="ideias.length <= 0">
+					<div class="card">
+						<p>
+							Nenhuma Ideia Encontrada
+						</p>
 					</div>
 				</li>
 			</ul>
@@ -47,7 +61,7 @@
 						</div>
 					</div>
 				</li>
-				<li>
+				<!-- <li>
 					<div class="card-info">
 						<div id="peo-icon" class="icon">
 							<img class="info-icon" src="./../../../assets/stylesheets/img/person.png">
@@ -57,7 +71,7 @@
 							<h3>Pessoas interessadas</h3>
 						</div>
 					</div>
-				</li>
+				</li> -->
 				<li>
 					<div class="card-info">
 						<div id="int-icon" class="icon">

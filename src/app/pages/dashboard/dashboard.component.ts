@@ -1,12 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Ideia } from 'src/app/shared/ideia/ideia';
 import { IdeiaService } from 'src/app/shared/ideia/ideia.service';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Projeto } from 'src/app/shared/projeto/projeto';
 import { ProjetoService } from 'src/app/shared/projeto/projeto.service';
-import { ProfessorService } from 'src/app/shared/professor/professor.service';
-import { AlunoService } from 'src/app/shared/aluno/aluno.service';
 import { UserService } from 'src/app/shared/user/user.service'
 @Component({
   selector: 'app-dashboard',
@@ -27,7 +24,8 @@ export class DashboardComponent implements OnInit {
   formularioBusca = new FormGroup({
     titulo: new FormControl(''),
     criador: new FormControl(''),
-    area: new FormControl('')
+    area: new FormControl(''),
+    autor: new FormControl('')
   })
 
   constructor(
@@ -56,7 +54,7 @@ export class DashboardComponent implements OnInit {
         if(key === 'interestingIdeas') this.ideias = value;
         if(key === 'myIdeas') this.minhasIdeias = value;
       })
-      console.log(this.ideias);
+      console.log(this.minhasIdeias, "##");
     });
   }
 
@@ -78,8 +76,12 @@ export class DashboardComponent implements OnInit {
 
   buscaIdeias() {
     this.ideias = [];
-    this.ideiaService.buscarIdeias(this.formularioBusca.get('titulo')?.value,
-      this.formularioBusca.get('area')?.value).then(ideias => {
+    this.ideiaService.buscarIdeias(
+      this.formularioBusca.get('titulo')?.value,
+      this.formularioBusca.get('area')?.value, 
+      this.formularioBusca.get('autor')?.value,
+      this.idUsuario
+    ).then(ideias => {
         const objectArray = Object.entries(ideias);
         objectArray.forEach(([key, value]) => {
           if(key === 'interestingIdeas') this.ideias = value;
