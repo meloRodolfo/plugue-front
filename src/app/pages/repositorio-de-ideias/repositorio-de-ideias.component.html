@@ -30,22 +30,18 @@
         <div class="ideia_interesse">
             <ul>
                 <li *ngFor="let res of resultInteresse">                
-                    <div class="card">
-                        <header>
-                            <h1 class="card-title">{{ res.titulo }}</h1>                            
-                        </header>
-                        <p>
-                            {{ res.descricao }}
-                        </p>                        
-                        <a class="mais_info" routerLink='../projeto/{{res.id}}'>Mais informações</a>                         
+                    <div class="card">                    
+                        <h1 class="card-title">{{ res.title }}</h1>                          
+                        <p>{{ res.description }}</p>  
+                        <a class="mais_info" routerLink='../ideia/{{res.id}}'>Mais informações</a>                      
                     </div>
                 </li>
                 <li *ngIf="resultInteresse.length <= 0">                
-                    <div class="card-none">
-                        <p>Você ainda não se interessou por nenhum projeto!</p>                       
+                    <div class="card-none">                                           
+                        <p>Você ainda não cadastrou nenhuma ideia no sistema</p>                       
                     </div>
                 </li>
-            </ul>   
+            </ul>  
         </div>
     </div>
 </div>
