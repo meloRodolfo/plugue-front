@@ -10,7 +10,6 @@ import { IdeiaService } from 'src/app/shared/ideia/ideia.service';
 })
 export class IdeiaComponent implements OnInit {
   id: string
-  readonly apiURL : string;
   titulo : any;
   descricao: any;
   areaInteresse: any;
@@ -21,8 +20,6 @@ export class IdeiaComponent implements OnInit {
 
   constructor(route: ActivatedRoute, private ideiaService: IdeiaService, private router: Router) { 
     this.id = route.snapshot.params.ideiaId;
-    // this.apiURL = 'https://plugue.herokuapp.com/';
-    this.apiURL = 'http://127.0.0.1:8080'
     this.titulo = '';
     this.descricao = '';
     this.areaInteresse = '';

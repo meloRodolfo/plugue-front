@@ -48,10 +48,8 @@ export class CadastrarIdeiaComponent implements OnInit {
     this.ideia.status = 'in progress'
     console.log(this.ideia)
     console.log(this.aluno)
-    this.ideiaService.salvaIdeia(this.ideia).subscribe(ideia => {
-      this.returnIdeia = new Ideia(ideia);
-      this.router_env.navigate([`/ideia/${ideia.id}`])
-      console.log(this.returnIdeia);
+    this.ideiaService.salvaIdeia(this.ideia).then(({ idea }) => {
+      this.router_env.navigate([`/ideia/${idea}`])
     });
   }
 

@@ -15,9 +15,9 @@ export class IdeiaService {
   path: string = 'https://juf7nz7sri.execute-api.us-east-1.amazonaws.com/dev/idea';
   result!: Array<Ideia>
 
-  salvaIdeia(ideia: Ideia): Observable<Ideia> {
+  salvaIdeia(ideia: Ideia): Promise<Object|any> {
     console.log(JSON.stringify(ideia))
-    return this.httpClient.post<Ideia>(this.path, JSON.stringify(ideia));
+    return this.httpClient.post<Ideia>(this.path, JSON.stringify(ideia)).toPromise();
   }
 
   //Lista todas as ideias
