@@ -46,10 +46,8 @@ export class CadastrarIdeiaComponent implements OnInit {
     this.ideia.description = this.formulario.get("descricaoIdeia")?.value;
     this.ideia.AuthorId = this.idUsuario
     this.ideia.status = 'in progress'
-    console.log(this.ideia)
-    console.log(this.aluno)
-    this.ideiaService.salvaIdeia(this.ideia).then(({ idea }) => {
-      this.router_env.navigate([`/ideia/${idea}`])
+    this.ideiaService.salvaIdeia(this.ideia).then((response) => {
+      this.router_env.navigate([`/ideia/${response.idea}`])
     });
   }
 

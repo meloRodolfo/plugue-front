@@ -38,7 +38,6 @@ export class IdeiaComponent implements OnInit {
       const objectArray = Object.entries(idea);
 
       objectArray.forEach(([ key, value ]) => {
-        console.log(key, "#######", value)
         if(key === 'title') this.titulo = value;
         if(key === 'area_of_interest') this.areaInteresse = value;
         if(key === 'description') this.descricao = value;

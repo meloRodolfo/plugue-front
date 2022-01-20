@@ -44,18 +44,8 @@ export class UserService {
     }
   }
 
-  applyIdea(idUser: String, idIdeia: String) {
-    this.httpClient.post<any>(`${this.path}/${idUser}/idea/${idIdeia}/interest`, '{}').subscribe(
-      val => {
-        console.log("Interesse efetuado com sucesso", val);
-      },
-      response => {
-          console.log("Erro na hora de interessar-se por ideia", response);
-      },
-      () => {
-          console.log("The POST observable is now completed.");
-      }
-    );
+  applyIdea(idUser: String, idIdeia: String): Promise<Object|any> {
+    return this.httpClient.post<any>(`${this.path}/${idUser}/idea/${idIdeia}/interest`, '{}').toPromise();
   }
 
   async authenticateUser (email: string, password: string) {

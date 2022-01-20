@@ -59,7 +59,6 @@ export class RepositorioDeIdeiasComponent implements OnInit {
       objectArray.forEach(([key, value]) => {
         if(key === 'myIdeas') this.result = value;
       })
-      console.log(this.result);
     });
 
     // this.ideiaService.listarIdeias(this.idUsuario).subscribe((ideias) => {

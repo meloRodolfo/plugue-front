@@ -39,7 +39,7 @@
 					</div>
 				</li>
 
-				<li *ngIf="ideias.length <= 0">
+				<li *ngIf="flag">
 					<div class="card">
 						<p>
 							Nenhuma Ideia Encontrada
@@ -56,7 +56,7 @@
 							<img class="info-icon" src="./../../../assets/stylesheets/img/book.png">
 						</div>
 						<div id="texts">
-							<h1>{{ minhasIdeias.length }}</h1>
+							<h1>{{ qtdMinhasIdeias }}</h1>
 							<h3>Projetos pessoais</h3>
 						</div>
 					</div>
@@ -78,7 +78,7 @@
 							<img class="info-icon" src="./../../../assets/stylesheets/img/star.png">
 						</div>
 						<div id="texts">
-							<h1>{{ ideiasDeInteresse.length }}</h1>
+							<h1>{{ qtdIdeiasInteresse }}</h1>
 							<h3>Projetos de interesse</h3>
 						</div>
 					</div>

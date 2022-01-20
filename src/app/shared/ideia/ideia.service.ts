@@ -16,7 +16,6 @@ export class IdeiaService {
   result!: Array<Ideia>
 
   salvaIdeia(ideia: Ideia): Promise<Object|any> {
-    console.log(JSON.stringify(ideia))
     return this.httpClient.post<Ideia>(this.path, JSON.stringify(ideia)).toPromise();
   }
 

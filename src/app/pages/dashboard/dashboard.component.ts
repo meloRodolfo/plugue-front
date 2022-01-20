@@ -16,10 +16,10 @@ export class DashboardComponent implements OnInit {
   minhasIdeias!: Array<any>;
   ideiasDeInteresse!: Array<any>;
   projetos!: Array<Projeto>;
-  tipoUsuario: any = '';
   idUsuario: any = '';
-  isAluno: boolean = false;
-  isProfessor: boolean = false;
+  flag: boolean = false;
+  qtdIdeiasInteresse: number = 0;
+  qtdMinhasIdeias: number = 0;
 
   formularioBusca = new FormGroup({
     titulo: new FormControl(''),
@@ -35,7 +35,6 @@ export class DashboardComponent implements OnInit {
     private usuarioService: UserService
   ) {
     this.idUsuario = this.route.snapshot.paramMap.get('id');
-    this.tipoUsuario = this.route.snapshot.paramMap.get('tipoUsuario');
     sessionStorage.setItem('id', this.idUsuario);
    }
 
@@ -54,6 +53,8 @@ export class DashboardComponent implements OnInit {
         if(key === 'interestingIdeas') this.ideias = value;
         if(key === 'myIdeas') this.minhasIdeias = value;
       })
+      if(!this.ideias) this.flag = true;
+      this.minhasIdeias ? this.qtdMinhasIdeias = this.minhasIdeias.length : 0;
       console.log(this.minhasIdeias, "##");
     });
   }
@@ -62,17 +63,18 @@ export class DashboardComponent implements OnInit {
     this.usuarioService.getInterestingIdeas(this.idUsuario).then(({ idea }) => {
       this.ideiasDeInteresse = idea
     })
+    this.ideiasDeInteresse ? this.qtdIdeiasInteresse = this.ideiasDeInteresse.length : 0;
   }
 
-  listaProjetos() {
-    this.projetoService.listarProjetos().then(projetos => {
-      const objectArray = Object.entries(projetos);
-      objectArray.forEach(([key, value]) => {
-        this.projetos.push(value);
-      })
-      console.log(this.projetos);
-    })
-  }
+  // listaProjetos() {
+  //   this.projetoService.listarProjetos().then(projetos => {
+  //     const objectArray = Object.entries(projetos);
+  //     objectArray.forEach(([key, value]) => {
+  //       this.projetos.push(value);
+  //     })
+  //     console.log(this.projetos);
+  //   })
+  // }
 
   buscaIdeias() {
     this.ideias = [];
@@ -103,6 +105,14 @@ export class DashboardComponent implements OnInit {
   }
 
   interessaIdeia(idIdeia: String) {
-    this.usuarioService.applyIdea(this.idUsuario, idIdeia);
+    this.usuarioService.applyIdea(this.idUsuario, idIdeia).then(response => {
+        if(response.status == 201) 
+
+        console.log("Interesse efetuado com sucesso", response);
+      },
+      error => {
+          console.log("Erro na hora de interessar-se por ideia", error);
+      }
+    );
   }
 }
