@@ -15,11 +15,13 @@ export class DashboardComponent implements OnInit {
   ideias!: Array<any>;
   minhasIdeias!: Array<any>;
   ideiasDeInteresse!: Array<any>;
-  projetos!: Array<Projeto>;
+  // projetos!: Array<Projeto>;
   idUsuario: any = '';
   flag: boolean = false;
   qtdIdeiasInteresse: number = 0;
   qtdMinhasIdeias: number = 0;
+  msgModal: string = '';
+  flagModal: boolean = false;
 
   formularioBusca = new FormGroup({
     titulo: new FormControl(''),
@@ -31,7 +33,7 @@ export class DashboardComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private ideiaService: IdeiaService,
-    private projetoService: ProjetoService,
+    // private projetoService: ProjetoService,
     private usuarioService: UserService
   ) {
     this.idUsuario = this.route.snapshot.paramMap.get('id');
@@ -92,27 +94,35 @@ export class DashboardComponent implements OnInit {
       });
   }
 
-  buscaProjetos() {
-    this.projetos = [];
-    this.projetoService.buscarProjetos(this.formularioBusca.get('titulo')?.value,
-      this.formularioBusca.get('area')?.value).then(projetos => {
-        const objectArray = Object.entries(projetos);
-        objectArray.forEach(([key, value]) => {
-          this.projetos.push(value);
-        })
-        console.log(this.projetos)
-      });
-  }
+  // buscaProjetos() {
+  //   this.projetos = [];
+  //   this.projetoService.buscarProjetos(this.formularioBusca.get('titulo')?.value,
+  //     this.formularioBusca.get('area')?.value).then(projetos => {
+  //       const objectArray = Object.entries(projetos);
+  //       objectArray.forEach(([key, value]) => {
+  //         this.projetos.push(value);
+  //       })
+  //       console.log(this.projetos)
+  //     });
+  // }
 
   interessaIdeia(idIdeia: String) {
     this.usuarioService.applyIdea(this.idUsuario, idIdeia).then(response => {
-        if(response.status == 201) 
-
+        this.msgModal = response.message;
+        this.showModal();
         console.log("Interesse efetuado com sucesso", response);
       },
       error => {
           console.log("Erro na hora de interessar-se por ideia", error);
       }
     );
+  }
+
+  showModal() {
+    this.flagModal = true;
+  }
+
+  closeModal() {
+    this.flagModal = false;
   }
 }

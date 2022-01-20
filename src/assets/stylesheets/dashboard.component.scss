@@ -213,3 +213,47 @@ header {
     transform: translateY(50%);
     top: 50%
 }
+
+.modal {
+    text-align: center;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px #333;
+    min-width: 320px;
+    position: fixed;
+    left: 50%;
+    padding: 24px;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 11;
+  }
+  
+  .overlay {
+    background: #000;
+    height: 100vh;
+    left: 0;
+    opacity: 0.5;
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    z-index: 10;
+  }
+
+  .botaoModal {
+    width: 187px;
+    height: 50px;
+    background: #B35F5F;
+    border: 1.5px solid #B35F5F;
+    box-sizing: border-box;
+    border-radius: 6px;
+    margin-top: 2%;
+    margin-bottom: 3%;
+    font-family: Lato;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 17px;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    cursor: pointer;
+  }

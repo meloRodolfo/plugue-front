@@ -87,4 +87,9 @@
 			</ul>
 		</div>
 	</div>
+	<div class="modal" *ngIf="flagModal">
+		<h1>{{msgModal}}</h1>
+		<button class="botaoModal" (click)="closeModal()">Ok</button>
+	</div>
+	<div class="overlay" *ngIf="flagModal"></div>
 </body>
