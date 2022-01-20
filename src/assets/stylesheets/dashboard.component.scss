@@ -110,7 +110,12 @@ h6 {
     background-color: $main-color;
     padding: 3px 21px;
     border-radius: 10px;
-    color: $yellow
+    color: $yellow;
+    font-size: 0.9em
+}
+
+#status {
+    background-color: $blue;
 }
 
 p {
