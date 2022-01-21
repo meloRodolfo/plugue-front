@@ -13,7 +13,13 @@ import { AtualizarProjetoComponent } from './pages/atualizar-projeto/atualizar-p
 
 const routes: Routes = [
   { path:"", component: IndexComponent },
-  { path:"home", component: DashboardComponent },
+  { 
+    path:"home", 
+    component: DashboardComponent, 
+    children: [
+      {path: "**", component: DashboardComponent}
+    ] 
+  },
   { path: "cadastro", component: CadastroComponent },
   { path:"login", component: LoginComponent },
   { path:"cadastrar-ideia", component: CadastrarIdeiaComponent },
