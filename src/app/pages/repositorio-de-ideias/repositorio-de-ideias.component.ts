@@ -15,21 +15,17 @@ export class RepositorioDeIdeiasComponent implements OnInit {
   result : Array<any>;
   resultInteresse : Array<any>;
   idUsuario: any = '';
-  tipoSession: any = '';
 
   constructor(
-    private http : HttpClient,
     private route_rec: ActivatedRoute,
     private router_env: Router,
     private ideiaService: IdeiaService,
     private usuarioService: UserService
     ) {
-    // this.apiURL = 'https://plugue.herokuapp.com/';
     this.apiURL = ''
     this.result = [];
     this.resultInteresse = [];
     this.idUsuario = this.route_rec.snapshot.paramMap.get('id');
-    this.tipoSession = sessionStorage.getItem("tipo");
   }
 
   ngOnInit(): void {

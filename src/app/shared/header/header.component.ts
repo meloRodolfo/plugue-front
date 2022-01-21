@@ -15,8 +15,6 @@ export class HeaderComponent implements OnInit {
   tipoSession: any = '';
 
   constructor(
-    private usuarioService: UsuarioService,
-    private route_rec: ActivatedRoute,
     private router_env: Router
   ) {
     this.idUsuario = sessionStorage.getItem("id");
@@ -33,10 +31,14 @@ export class HeaderComponent implements OnInit {
 
   dash(){
     if(this.tipoSession == 'aluno'){
-      this.router_env.navigate(['/home', { id: this.idUsuario, tipoUsuario: this.tipoSession}]);
+      this.router_env.navigate(['/home', { id: this.idUsuario }]);
+
+      // this.router_env.navigate(['/home'], { state: { id: this.idUsuario, skipLocationChange: true, replaceUrl: false }});
     }
     else{
-      this.router_env.navigate(['/home', { id: this.idUsuario, tipoUsuario: this.tipoSession}]);
+      this.router_env.navigate(['/home', { id: this.idUsuario }]);
+
+      // this.router_env.navigate(['/home'], { state: { id: this.idUsuario, skipLocationChange: true, replaceUrl: false }});
     } 
   }
 }
