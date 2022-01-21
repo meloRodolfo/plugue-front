@@ -51,4 +51,8 @@ export class CadastrarIdeiaComponent implements OnInit {
     });
   }
 
+  cancelar() {
+    this.router_env.navigate(['/repositorio-de-ideias', { id: this.idUsuario }]);
+  }
+
 }
